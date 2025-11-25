@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/database.js';
 import authRoutes from './routes/auth.js';
+import transactionRoutes from './routes/transactions.js';
 
 // Load environment variables
 dotenv.config();
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/transactions', transactionRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
